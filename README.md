@@ -1,16 +1,19 @@
-### Hi there 👋
+```python
+import json
+from dataclasses import asdict, dataclass
 
-<!--
-**zero-sigma/zero-sigma** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+@dataclass
+class Stack:
+    languages    : tuple = ("Python", "JavaScript", "Ruby")
+    databases    : tuple = ("PostgreSQL", "Redis", "MongoDB")
+    frameworks   : tuple = ("FastAPI", "Django", "Next.js")
+    misc_tech    : tuple = ("Docker", "Celery", "RabbitMQ")
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    def serialize(self):
+        return json.dumps(asdict(self), indent=4)
+
+
+stack = Stack()
+print(stack.serialize())
+```
