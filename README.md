@@ -5,7 +5,7 @@ from dataclasses import asdict, dataclass
 
 @dataclass
 class Stack:
-    languages    : tuple = ("Python", "JS/TS", "C++")
+    languages    : tuple = ("Python", "JS/TS", "Java", "C/C++")
     databases    : tuple = ("MySQL", "PostgreSQL", "Redis")
     libraries    : tuple = ("React", "Vue", "Svelte," "HTMX")
     frameworks   : tuple = ("FastAPI", "Django", "Next.js")
